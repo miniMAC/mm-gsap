@@ -1,0 +1,14 @@
+# Esclusioni generiche
+/node_modules
+/vendor
+.idea
+npm-debug.log
+
+# Specifico per il mondo mac
+.DS_Store
+
+# Specifico Sublime
+sftp-config.json
+
+# Specifico per Visual Studio Code
+.vscode
