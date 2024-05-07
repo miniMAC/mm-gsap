@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name:       MM
+ * Plugin Name:       MM GSAP
  * Plugin URI:        https://minimamente.com
  * Description:       Inclusione di custom CSS, JS e animazioni GSAP
  * Version:           1.0.0
@@ -17,3 +17,7 @@ if ( ! defined( 'WPINC' ) ) {
     die;
 }
 
+/**
+ * Includo files
+ */
+require_once plugin_dir_path( __FILE__ ) . 'inc/enqueue.php';
