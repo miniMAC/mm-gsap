@@ -14,13 +14,13 @@ function mm_gsap_enqueue( $hook ) {
 
     // Seleziono i miei scripts
     $gsaps = [
-        'mm-gsap' => 'js/gsap.min.js',
         'mm-gsap-scrolltrigger' => 'js/ScrollTrigger.min.js',
         'mm-gsap-scrolltoplugin' => 'js/ScrollToPlugin.min.js',
         'mm-gsap-textplugin' => 'js/TextPlugin.min.js',
         'mm-gsap-scrollsmoother' => 'js/ScrollSmoother.min.js',
         'mm-gsap-scrambletextplugin' => 'js/ScrambleTextPlugin.min.js',
         'mm-gsap-splittext' => 'js/SplitText.min.js',
+        'mm-gsap-trick' => 'js/gsap-trick.js',
     ];
 
     // Registro tutti gli scripts
@@ -40,14 +40,39 @@ function mm_gsap_enqueue( $hook ) {
         wp_enqueue_script( $key );
     }
 
-    // CSS
-    wp_register_style(
-        'mm_gsap-css',
-        plugins_url( 'css/mm_gsap.css', __DIR__ ),
-        array(),
+
+    // File singolo
+    $dipendenze = [];
+    foreach ($gsaps as $key => $value) {
+        $dipendenze[] = $key;
+    }
+    $dipendenze[] = 'jquery'; // Aggiungo all'array anche jquery
+
+    wp_register_script(
+        'mm-scripts',
+        plugins_url( 'mm-gsap.js', __DIR__ ),
+        $dipendenze,
         '1.0.0'
     );
-    wp_enqueue_style( 'mm_gsap-css' );
+
+    // Ottieni url
+    $url = get_site_url();
+    $host = parse_url($url, PHP_URL_HOST);
+
+    // Localize
+	$mm_gsap_opt = [
+		'site' => $host,
+    ];
+    wp_localize_script( 'mm-gsap-trick', 'mm_gsap_opt', $mm_gsap_opt );
+
+    // CSS
+    // wp_register_style(
+    //     'mm_gsap-css',
+    //     plugins_url( 'css/mm_gsap.css', __DIR__ ),
+    //     array(),
+    //     '1.0.0'
+    // );
+    // wp_enqueue_style( 'mm_gsap-css' );
 
 
 }
