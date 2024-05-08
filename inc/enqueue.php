@@ -14,6 +14,7 @@ function mm_gsap_enqueue( $hook ) {
 
     // Seleziono i miei scripts
     $gsaps = [
+        'mm-gsap' => 'js/gsap.min.js',
         'mm-gsap-scrolltrigger' => 'js/ScrollTrigger.min.js',
         'mm-gsap-scrolltoplugin' => 'js/ScrollToPlugin.min.js',
         'mm-gsap-textplugin' => 'js/TextPlugin.min.js',
@@ -46,22 +47,6 @@ function mm_gsap_enqueue( $hook ) {
         $dipendenze[] = $key;
     }
     $dipendenze[] = 'jquery'; // Aggiungo all'array anche jquery
-
-    wp_register_script(
-        'mm-scripts',
-        plugins_url( 'mm-gsap.js', __DIR__ ),
-        $dipendenze,
-        '1.0.0'
-    );
-
-    // CSS
-    // wp_register_style(
-    //     'mm_gsap-css',
-    //     plugins_url( 'css/mm_gsap.css', __DIR__ ),
-    //     array(),
-    //     '1.0.0'
-    // );
-    // wp_enqueue_style( 'mm_gsap-css' );
 
 
 }
