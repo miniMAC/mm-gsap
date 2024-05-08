@@ -36,13 +36,14 @@ function mm_get_files_on_path() {
     return $listaFiles;
 }
 
-
-// Aggiungi stili e script personalizzati
-function mm_gsap_enqueue( $hook ) {
-
+// Funzione che restituisce tutti i files che trova in un array custom
+function mm_get_gsap_all_files() {
 
     // Prendo tutti i files dentro la path
     $files = mm_get_files_on_path();
+
+    // Setto un prefisso
+    $prefisso = 'mm-';
 
     // Creo un array con i dati per i vari files
     $gsap_files = [];
@@ -52,24 +53,42 @@ function mm_gsap_enqueue( $hook ) {
         $nome = strtolower($nome_file);
 
         $gsap_files[] = [
+            'fullname' => $prefisso . $nome,
             'name' => $nome,
             'path' => $file
         ];
 
     }
 
+    return $gsap_files;
+
+}
+
+
+// Aggiungi stili e script personalizzati
+function mm_gsap_enqueue( $hook ) {
+
+    // Prendo l'opzione
+    $mm_gsap_settings = get_option('mm_gsap_settings');
+
+    // Se è false
+    if ( ! $mm_gsap_settings ) {
+        return;
+    }
+
+    // Prendo i files
+    $gsap_files = mm_get_gsap_all_files();
+
     // Registro tutti gli scripts
     if ( empty( $gsap_files ) ) {
         return;
     }
 
-    $prefisso = 'mm-';
-
     // Registro ogni files
     foreach ($gsap_files as $file) {
 
         wp_register_script(
-            $prefisso . $file['name'], // manipolo la stringa con il prefisso "mm-"
+            $file['fullname'], // manipolo la stringa con il prefisso "mm-"
             plugins_url( $file['path'], __DIR__ ),
             array(
                 'jquery'
@@ -79,9 +98,9 @@ function mm_gsap_enqueue( $hook ) {
 
     }
 
-    // Servo tutti i files
-    foreach ($gsap_files as $file) {
-        wp_enqueue_script( $prefisso . $file['name'] );
+    // In base alla selzione servo tutti i files richiesti
+    foreach ($mm_gsap_settings['mm_gsap_checkbox_field'] as $key => $value) {
+        wp_enqueue_script( $key );
     }
 
 

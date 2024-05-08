@@ -21,3 +21,4 @@ if ( ! defined( 'WPINC' ) ) {
  * Includo files
  */
 require_once plugin_dir_path( __FILE__ ) . 'inc/enqueue.php';
+require_once plugin_dir_path( __FILE__ ) . 'inc/opzioni.php';
