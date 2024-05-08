@@ -20,7 +20,6 @@ function mm_gsap_enqueue( $hook ) {
         'mm-gsap-scrollsmoother' => 'js/ScrollSmoother.min.js',
         'mm-gsap-scrambletextplugin' => 'js/ScrambleTextPlugin.min.js',
         'mm-gsap-splittext' => 'js/SplitText.min.js',
-        'mm-gsap-trick' => 'js/gsap-trick.js',
     ];
 
     // Registro tutti gli scripts
@@ -54,16 +53,6 @@ function mm_gsap_enqueue( $hook ) {
         $dipendenze,
         '1.0.0'
     );
-
-    // Ottieni url
-    $url = get_site_url();
-    $host = parse_url($url, PHP_URL_HOST);
-
-    // Localize
-	$mm_gsap_opt = [
-		'site' => $host,
-    ];
-    wp_localize_script( 'mm-gsap-trick', 'mm_gsap_opt', $mm_gsap_opt );
 
     // CSS
     // wp_register_style(

@@ -148,29 +148,6 @@ $(function () {
 // ------------ scripts -----------
 $(document).ready(function(){
 
-    // Meu blurred
-    $(window).scroll(function() {
-        var scroll = $(window).scrollTop();
-        if (scroll >= 200) {
-            $('.blurred-nav').addClass('blurring');
-        } else {
-            $('.blurred-nav').removeClass('blurring');
-        }
-    });
 
-    // Slider one
-    var sliderOne = new Swiper(".slider-one", {
-        loop: true,
-        effect: "fade",
-        speed: 1200,
-        autoplay: {
-            delay: 55000,
-            disableOnInteraction: false,
-        },
-        navigation: {
-            nextEl: ".sl-one-button-next",
-            prevEl: ".sl-one-button-prev",
-        }
-    });
 
 });
