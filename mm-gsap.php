@@ -22,3 +22,4 @@ if ( ! defined( 'WPINC' ) ) {
  */
 require_once plugin_dir_path( __FILE__ ) . 'inc/enqueue.php';
 require_once plugin_dir_path( __FILE__ ) . 'inc/opzioni.php';
+require_once plugin_dir_path( __FILE__ ) . 'inc/funzioni.php';
