@@ -106,3 +106,18 @@ function mm_gsap_enqueue( $hook ) {
 
 }
 add_action( 'wp_enqueue_scripts', 'mm_gsap_enqueue' );
+
+
+
+
+// Enqueue the JavaScript for the sidebar
+function mm_gsap_sidebar_enqueue() {
+
+    wp_enqueue_script(
+        'mm-gsap-admin-edit',
+        plugins_url( 'assets/js/mm-gsap-admin-edit.js', __DIR__ ),
+        array( 'wp-plugins', 'wp-edit-post', 'wp-element', 'wp-components', 'wp-data' ),
+        '1.0.0'
+    );
+}
+add_action( 'enqueue_block_editor_assets', 'mm_gsap_sidebar_enqueue' );
