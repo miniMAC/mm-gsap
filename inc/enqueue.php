@@ -21,14 +21,14 @@ function mm_estrai_nome_file( $path ) {
 
 function mm_get_files_on_path() {
 
-    $directory = plugin_dir_path( __DIR__ ) . 'js'; // Percorso alla cartella js nel tuo plugin
+    $directory = plugin_dir_path( __DIR__ ) . 'assets/vendors'; // Percorso alla cartella js nel tuo plugin
     $files = scandir($directory);
     $listaFiles = [];
 
     foreach ($files as $file) {
         if ($file !== '.' && $file !== '..' && is_file($directory . '/' . $file)) {
             if (pathinfo($file, PATHINFO_EXTENSION) !== 'map') {
-                $listaFiles[] = 'js/' . $file;
+                $listaFiles[] = 'assets/vendors/' . $file;
             }
         }
     }
