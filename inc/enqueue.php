@@ -121,6 +121,16 @@ function mm_gsap_enqueue( $hook ) {
     );
     wp_enqueue_script( 'mm-gsap-scripts' );
 
+    // Aggiungi lo stile CSS solo nel front-end
+    if ( ! is_admin() ) {
+        wp_enqueue_style(
+            'mm-gsap-styles',
+            plugins_url( 'assets/css/mm-gsap.css', __DIR__ ),
+            array(),
+            '1.0.0'
+        );
+    }
+
 
 }
 add_action( 'wp_enqueue_scripts', 'mm_gsap_enqueue' );
