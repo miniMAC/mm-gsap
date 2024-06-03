@@ -85,7 +85,7 @@ function mm_gsap_enqueue( $hook ) {
     }
 
     // Registro ogni files
-    foreach ($gsap_files as $file) {
+    foreach ( $gsap_files as $file ) {
 
         wp_register_script(
             $file['fullname'], // manipolo la stringa con il prefisso "mm-"
@@ -103,10 +103,27 @@ function mm_gsap_enqueue( $hook ) {
         wp_enqueue_script( $key );
     }
 
+    
+    // Includo il file principale
+    $mm_gsap_dep = ['jquery'];
+
+    // Ottieni le chiavi dall'array mm_gsap_checkbox_field
+    $mm_gsap_keys = array_keys($mm_gsap_settings['mm_gsap_checkbox_field']);
+
+    // Unisci le chiavi con l'array esistente
+    $mm_gsap_dep = array_merge($mm_gsap_dep, $mm_gsap_keys);
+
+    wp_register_script(
+        'mm-gsap-scripts',
+        plugins_url( 'assets/js/mm-gsap.js', __DIR__ ),
+        $mm_gsap_dep,
+        '1.0.0'
+    );
+    wp_enqueue_script( 'mm-gsap-scripts' );
+
 
 }
 add_action( 'wp_enqueue_scripts', 'mm_gsap_enqueue' );
-
 
 
 

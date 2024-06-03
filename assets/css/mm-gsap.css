@@ -1,3 +1,10 @@
 /*--------------------------------------------------------------
-# GSAP
---------------------------------------------------------------*//*# sourceMappingURL=mm-gsap.css.map */
+# GSAP - testo
+--------------------------------------------------------------*/
+.mm-gsap-testo-1 {
+  display: inline-block;
+}
+
+.mm-gsap-testo-1 .char {
+  display: inline-block;
+}/*# sourceMappingURL=mm-gsap.css.map */
