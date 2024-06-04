@@ -9,22 +9,22 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Hook per aggiungere la riscrittura
-add_action('init', 'add_mm_gsap_test_endpoint');
-function add_mm_gsap_test_endpoint() {
-    add_rewrite_rule('^mm-gsap-test/?$', 'index.php?mm_gsap_test=1', 'top');
+add_action('init', 'add_mm_gsap_testo_endpoint');
+function add_mm_gsap_testo_endpoint() {
+    add_rewrite_rule('^mm-gsap-testo/?$', 'index.php?mm_gsap_testo=1', 'top');
 }
 
 // Aggiungere una query var per l'endpoint
-add_filter('query_vars', 'mm_gsap_test_query_vars');
-function mm_gsap_test_query_vars($vars) {
-    $vars[] = 'mm_gsap_test';
+add_filter('query_vars', 'mm_gsap_testo_query_vars');
+function mm_gsap_testo_query_vars($vars) {
+    $vars[] = 'mm_gsap_testo';
     return $vars;
 }
 
 // Intercettare la query e caricare il template se l'utente è loggato
-add_action('template_redirect', 'mm_gsap_test_template');
-function mm_gsap_test_template() {
-    if (get_query_var('mm_gsap_test') && is_user_logged_in()) {
+add_action('template_redirect', 'mm_gsap_testo_template');
+function mm_gsap_testo_template() {
+    if (get_query_var('mm_gsap_testo') && is_user_logged_in()) {
 
         // Disabilita la admin bar
         add_filter('show_admin_bar', '__return_false');
@@ -35,7 +35,7 @@ function mm_gsap_test_template() {
         <!DOCTYPE html>
         <html>
         <head>
-            <title>MM GSAP Test</title>
+            <title>MM GSAP Testo</title>
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
             <?php wp_head(); // Includere gli script e gli stili registrati ?>
         </head>
@@ -233,7 +233,7 @@ function mm_gsap_test_template() {
         // Invia l'output al browser
         ob_end_flush();
         exit;
-    } elseif (get_query_var('mm_gsap_test')) {
+    } elseif (get_query_var('mm_gsap_testo')) {
         // Se l'utente non è loggato, reindirizzalo alla pagina di login
         auth_redirect();
     }

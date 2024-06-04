@@ -11,6 +11,8 @@
         .tooltip {
             position: relative;
             display: inline-block;
+            margin-bottom: 6px;
+            margin-right: 6px;
         }
         
         .tooltip .tooltiptext {
@@ -42,14 +44,15 @@
     `;
     document.head.appendChild(style);
 
-    const TooltipButton = ({ text, imgSrc, imgAlt }) => (
+    const TooltipButton = ({ text, imgSrc, imgAlt, copyToClipboard }) => (
         el(
             'div',
             { className: 'tooltip' },
             el(
                 Button,
                 {
-                    isSecondary: true,
+                    variant: 'secondary',
+                    size: 'compact',
                     onClick: () => { copyToClipboard(text); }
                 },
                 text
@@ -102,12 +105,74 @@
                     el(TooltipButton, {
                         text: 'mm-gsap-testo-1',
                         imgSrc: mm_gsap.mm_gsap_plugin_path + '/assets/animazioni/mm-gsap-testo-1.gif',
-                        imgAlt: 'Animation 1'
+                        imgAlt: 'Animation 1',
+                        copyToClipboard: copyToClipboard
                     }),
                     el(TooltipButton, {
                         text: 'mm-gsap-testo-2',
                         imgSrc: mm_gsap.mm_gsap_plugin_path + '/assets/animazioni/mm-gsap-testo-2.gif',
-                        imgAlt: 'Animation 2'
+                        imgAlt: 'Animation 2',
+                        copyToClipboard: copyToClipboard
+                    }),
+                    el(TooltipButton, {
+                        text: 'mm-gsap-testo-3',
+                        imgSrc: mm_gsap.mm_gsap_plugin_path + '/assets/animazioni/mm-gsap-testo-3.gif',
+                        imgAlt: 'Animation 3',
+                        copyToClipboard: copyToClipboard
+                    }),
+                    el(TooltipButton, {
+                        text: 'mm-gsap-testo-4',
+                        imgSrc: mm_gsap.mm_gsap_plugin_path + '/assets/animazioni/mm-gsap-testo-4.gif',
+                        imgAlt: 'Animation 4',
+                        copyToClipboard: copyToClipboard
+                    }),
+                    el(TooltipButton, {
+                        text: 'mm-gsap-testo-5',
+                        imgSrc: mm_gsap.mm_gsap_plugin_path + '/assets/animazioni/mm-gsap-testo-5.gif',
+                        imgAlt: 'Animation 5',
+                        copyToClipboard: copyToClipboard
+                    }),
+                    el(TooltipButton, {
+                        text: 'mm-gsap-testo-6',
+                        imgSrc: mm_gsap.mm_gsap_plugin_path + '/assets/animazioni/mm-gsap-testo-6.gif',
+                        imgAlt: 'Animation 6',
+                        copyToClipboard: copyToClipboard
+                    }),
+                    el(TooltipButton, {
+                        text: 'mm-gsap-testo-7',
+                        imgSrc: mm_gsap.mm_gsap_plugin_path + '/assets/animazioni/mm-gsap-testo-7.gif',
+                        imgAlt: 'Animation 7',
+                        copyToClipboard: copyToClipboard
+                    }),
+                    el(TooltipButton, {
+                        text: 'mm-gsap-testo-8',
+                        imgSrc: mm_gsap.mm_gsap_plugin_path + '/assets/animazioni/mm-gsap-testo-8.gif',
+                        imgAlt: 'Animation 8',
+                        copyToClipboard: copyToClipboard
+                    }),
+                    el(TooltipButton, {
+                        text: 'mm-gsap-testo-9',
+                        imgSrc: mm_gsap.mm_gsap_plugin_path + '/assets/animazioni/mm-gsap-testo-9.gif',
+                        imgAlt: 'Animation 9',
+                        copyToClipboard: copyToClipboard
+                    }),
+                    el(TooltipButton, {
+                        text: 'mm-gsap-testo-10',
+                        imgSrc: mm_gsap.mm_gsap_plugin_path + '/assets/animazioni/mm-gsap-testo-10.gif',
+                        imgAlt: 'Animation 10',
+                        copyToClipboard: copyToClipboard
+                    }),
+                    el(TooltipButton, {
+                        text: 'mm-gsap-testo-11',
+                        imgSrc: mm_gsap.mm_gsap_plugin_path + '/assets/animazioni/mm-gsap-testo-11.gif',
+                        imgAlt: 'Animation 11',
+                        copyToClipboard: copyToClipboard
+                    }),
+                    el(TooltipButton, {
+                        text: 'mm-gsap-testo-12',
+                        imgSrc: mm_gsap.mm_gsap_plugin_path + '/assets/animazioni/mm-gsap-testo-12.gif',
+                        imgAlt: 'Animation 12',
+                        copyToClipboard: copyToClipboard
                     })
                 )
             )

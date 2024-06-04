@@ -7,4 +7,37 @@
 
 .mm-gsap-testo-1 .char {
   display: inline-block;
+}
+
+.mm-gsap-testo-2 {
+  display: inline;
+}
+
+.mm-gsap-testo-2 .char {
+  display: inline-block;
+}
+
+.mm-gsap-testo-3 {
+  display: inline;
+}
+
+.mm-gsap-testo-3 .char {
+  display: inline-block;
+  transform-origin: center;
+}
+
+.mm-gsap-testo-4 {
+  display: inline;
+}
+
+.mm-gsap-testo-4 .char {
+  display: inline-block;
+}
+
+.mm-gsap-testo-6 {
+  display: inline;
+}
+
+.mm-gsap-testo-6 .char {
+  display: inline-block;
 }/*# sourceMappingURL=mm-gsap.css.map */
