@@ -146,5 +146,13 @@ function mm_gsap_sidebar_enqueue() {
         array( 'wp-plugins', 'wp-edit-post', 'wp-element', 'wp-components', 'wp-data' ),
         '1.0.0'
     );
+
+    // JS theme options
+	$mm_gsap_opts = [
+		'mm_gsap_plugin_path' => plugins_url( '', __DIR__ ),
+    ];
+    wp_localize_script( 'mm-gsap-admin-edit', 'mm_gsap', $mm_gsap_opts );
+
+
 }
 add_action( 'enqueue_block_editor_assets', 'mm_gsap_sidebar_enqueue' );
