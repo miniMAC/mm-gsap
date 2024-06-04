@@ -113,7 +113,7 @@ function mm_gsap_options_page() {
         submit_button();
         ?>
         <p>Animazioni GSAP testo: <a target="_blank" href="<?php echo get_bloginfo( 'url' ); ?>/mm-gsap-testo/"><?php echo get_bloginfo( 'url' ); ?>/mm-gsap-testo/</a></p>
-        <p>Animazioni GSAP immagini: <a target="_blank" href="<?php echo get_bloginfo( 'url' ); ?>/mm-gsap-immagini/"><?php echo get_bloginfo( 'url' ); ?>/mm-gsap-immagini/</a></p>
+        <p>Animazioni GSAP immagine: <a target="_blank" href="<?php echo get_bloginfo( 'url' ); ?>/mm-gsap-immagine/"><?php echo get_bloginfo( 'url' ); ?>/mm-gsap-immagine/</a></p>
 
     </form>
     <?php

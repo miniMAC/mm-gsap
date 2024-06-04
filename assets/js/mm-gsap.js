@@ -316,7 +316,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Avvia le animazioni al caricamento della pagina
+    // Avvia le animazioni al caricamento della pagina (testo)
     startAnimation1();
     startAnimation2();
     startAnimation3();
@@ -337,7 +337,7 @@ document.addEventListener("DOMContentLoaded", function () {
             button.addEventListener("click", animationFunction);
         }
     }
-
+    
     addClickListener("trigger-animation-1", startAnimation1);
     addClickListener("trigger-animation-2", startAnimation2);
     addClickListener("trigger-animation-3", startAnimation3);
