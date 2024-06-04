@@ -316,6 +316,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+
     // Avvia le animazioni al caricamento della pagina (testo)
     startAnimation1();
     startAnimation2();
@@ -350,4 +351,209 @@ document.addEventListener("DOMContentLoaded", function () {
     addClickListener("trigger-animation-10", startAnimation10);
     addClickListener("trigger-animation-11", startAnimation11);
     addClickListener("trigger-animation-12", startAnimation12);
+
+
+
+
+
+
+
+
+
+
+    // Funzione per creare animazioni
+    function mmGSAPanimateImages(selector, animation) {
+        const images = document.querySelectorAll(selector);
+
+        images.forEach(img => {
+            gsap.fromTo(img,
+                animation.from,
+                {
+                    ...animation.to,
+                    scrollTrigger: {
+                        trigger: img,
+                        start: "top 80%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        });
+    }
+
+    // Funzione per attivare l'animazione al click
+    function mmGSAPsetupButtonAnimation(buttonId, imageClass, animation) {
+        const button = document.getElementById(buttonId);
+
+        if (button) {
+            button.addEventListener('click', () => {
+                mmGSAPanimateImages(imageClass, animation);
+            });
+        }
+    }
+
+    // Funzioni specifiche per ogni animazione
+    function mmGSAPsetupAnimation1() {
+        mmGSAPsetupButtonAnimation('trigger-animation-img-1', '.img-effetto-1 img', {
+            from: { opacity: 0, y: 20 },
+            to: { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
+        });
+    }
+
+    function mmGSAPsetupAnimation2() {
+        mmGSAPsetupButtonAnimation('trigger-animation-img-2', '.img-effetto-2 img', {
+            from: { opacity: 0, scale: 0.8 },
+            to: { opacity: 1, scale: 1, duration: 1.2, ease: "elastic.out(1, 0.3)" }
+        });
+    }
+
+    function mmGSAPsetupAnimation3() {
+        mmGSAPsetupButtonAnimation('trigger-animation-img-3', '.img-effetto-3 img', {
+            from: { opacity: 0, x: -50 },
+            to: { opacity: 1, x: 0, duration: 1, ease: "power3.out" }
+        });
+    }
+
+    function mmGSAPsetupAnimation4() {
+        mmGSAPsetupButtonAnimation('trigger-animation-img-4', '.img-effetto-4 img', {
+            from: { opacity: 0, rotation: -15 },
+            to: { opacity: 1, rotation: 0, duration: 1.5, ease: "back.out(1.7)" }
+        });
+    }
+
+    function mmGSAPsetupAnimation5() {
+        mmGSAPsetupButtonAnimation('trigger-animation-img-5', '.img-effetto-5 img', {
+            from: { opacity: 0, y: 50 },
+            to: { opacity: 1, y: 0, duration: 1, ease: "bounce.out" }
+        });
+    }
+
+    function mmGSAPsetupAnimation6() {
+        mmGSAPsetupButtonAnimation('trigger-animation-img-6', '.img-effetto-6 img', {
+            from: { opacity: 0, scale: 1.2 },
+            to: { opacity: 1, scale: 1, duration: 1, ease: "circ.out" }
+        });
+    }
+
+    function mmGSAPsetupAnimation7() {
+        mmGSAPsetupButtonAnimation('trigger-animation-img-7', '.img-effetto-7 img', {
+            from: { opacity: 0, x: 50, y: 50 },
+            to: { opacity: 1, x: 0, y: 0, duration: 1.5, ease: "expo.out" }
+        });
+    }
+
+    function mmGSAPsetupAnimation8() {
+        mmGSAPsetupButtonAnimation('trigger-animation-img-8', '.img-effetto-8 img', {
+            from: { opacity: 0, filter: "blur(20px)" },
+            to: { opacity: 1, filter: "blur(0px)", duration: 1.5, ease: "power2.out" }
+        });
+    }
+
+    function mmGSAPsetupAnimation9() {
+        mmGSAPsetupButtonAnimation('trigger-animation-img-9', '.img-effetto-9 img', {
+            from: { opacity: 0, clipPath: "circle(0% at 50% 50%)" },
+            to: { opacity: 1, clipPath: "circle(75% at 50% 50%)", duration: 1.5, ease: "power2.out" }
+        });
+    }
+
+    function mmGSAPsetupAnimation10() {
+        mmGSAPsetupButtonAnimation('trigger-animation-img-10', '.img-effetto-10 img', {
+            from: { opacity: 0, y: -50, rotation: 45 },
+            to: { opacity: 1, y: 0, rotation: 0, duration: 1.5, ease: "elastic.out(1, 0.3)" }
+        });
+    }
+
+    function mmGSAPsetupAnimation11() {
+        mmGSAPsetupButtonAnimation('trigger-animation-img-11', '.img-effetto-11 img', {
+            from: { opacity: 0, x: -100 },
+            to: { opacity: 1, x: 0, duration: 1.5, ease: "power4.out" }
+        });
+    }
+
+    function mmGSAPsetupAnimation12() {
+        mmGSAPsetupButtonAnimation('trigger-animation-img-12', '.img-effetto-12 img', {
+            from: { opacity: 0, y: 100 },
+            to: { opacity: 1, y: 0, duration: 1.2, ease: "bounce.out" }
+        });
+    }
+
+    function mmGSAPsetupAnimation13() {
+        mmGSAPsetupButtonAnimation('trigger-animation-img-13', '.img-effetto-13 img', {
+            from: { opacity: 0, scale: 0.5, rotation: 90 },
+            to: { opacity: 1, scale: 1, rotation: 0, duration: 1.5, ease: "elastic.out(1, 0.3)" }
+        });
+    }
+
+    function mmGSAPsetupAnimation14() {
+        mmGSAPsetupButtonAnimation('trigger-animation-img-14', '.img-effetto-14 img', {
+            from: { opacity: 0, x: 200 },
+            to: { opacity: 1, x: 0, duration: 1, ease: "expo.out" }
+        });
+    }
+
+    function mmGSAPsetupAnimation15() {
+        mmGSAPsetupButtonAnimation('trigger-animation-img-15', '.img-effetto-15 img', {
+            from: { opacity: 0, y: -100 },
+            to: { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" }
+        });
+    }
+
+    function mmGSAPsetupAnimation16() {
+        mmGSAPsetupButtonAnimation('trigger-animation-img-16', '.img-effetto-16 img', {
+            from: { opacity: 0, rotation: -45, scale: 0.8 },
+            to: { opacity: 1, rotation: 0, scale: 1, duration: 1.5, ease: "elastic.out(1, 0.3)" }
+        });
+    }
+
+    function mmGSAPsetupAnimation17() {
+        mmGSAPsetupButtonAnimation('trigger-animation-img-17', '.img-effetto-17 img', {
+            from: { opacity: 0, y: 0, scale: 0.5 },
+            to: { opacity: 1, y: 0, scale: 1, duration: 1.2, ease: "power2.out" }
+        });
+    }
+
+    function mmGSAPsetupAnimation18() {
+        mmGSAPsetupButtonAnimation('trigger-animation-img-18', '.img-effetto-18 img', {
+            from: { opacity: 0, filter: "grayscale(100%)" },
+            to: { opacity: 1, filter: "grayscale(0%)", duration: 1.5, ease: "power2.out" }
+        });
+    }
+
+    function mmGSAPsetupAnimation19() {
+        mmGSAPsetupButtonAnimation('trigger-animation-img-19', '.img-effetto-19 img', {
+            from: { opacity: 0, scale: 0.7, y: -50 },
+            to: { opacity: 1, scale: 1, y: 0, duration: 1.5, ease: "power3.out" }
+        });
+    }
+
+    function mmGSAPsetupAnimation20() {
+        mmGSAPsetupButtonAnimation('trigger-animation-img-20', '.img-effetto-20 img', {
+            from: { opacity: 0, x: -50, filter: "blur(10px)" },
+            to: { opacity: 1, x: 0, filter: "blur(0px)", duration: 1.5, ease: "power2.out" }
+        });
+    }
+
+    // Chiamata delle funzioni specifiche per le animazioni
+    mmGSAPsetupAnimation1();
+    mmGSAPsetupAnimation2();
+    mmGSAPsetupAnimation3();
+    mmGSAPsetupAnimation4();
+    mmGSAPsetupAnimation5();
+    mmGSAPsetupAnimation6();
+    mmGSAPsetupAnimation7();
+    mmGSAPsetupAnimation8();
+    mmGSAPsetupAnimation9();
+    mmGSAPsetupAnimation10();
+    mmGSAPsetupAnimation11();
+    mmGSAPsetupAnimation12();
+    mmGSAPsetupAnimation13();
+    mmGSAPsetupAnimation14();
+    mmGSAPsetupAnimation15();
+    mmGSAPsetupAnimation16();
+    mmGSAPsetupAnimation17();
+    mmGSAPsetupAnimation18();
+    mmGSAPsetupAnimation19();
+    mmGSAPsetupAnimation20();
+
+
+    
 });

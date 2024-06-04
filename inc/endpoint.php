@@ -36,6 +36,8 @@ function mm_gsap_testo_template() {
         <html>
         <head>
             <title>MM GSAP Testo</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
             <?php wp_head(); // Includere gli script e gli stili registrati ?>
         </head>
@@ -50,174 +52,23 @@ function mm_gsap_testo_template() {
             </div>
 
 
-            
-            <div class="container my-5">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-8">
-                        <div class="p-5 bg-body-tertiary rounded-3">
-                            <p class="lead mb-5">mm-gsap-testo-1</p>
-                            <h2 class="mm-gsap-testo-1">Lorem ipsum dolor sit amet pellentesque auctor malesuada blandit aliquam pellentesque sollicitudin mi.</h2>
-                            <div class="mt-5">
-                                <div id="trigger-animation-1" class="btn btn-dark">play</div>
+            <?php for ($i = 1; $i <= 12; $i++) {
+                ?>
+                <div class="container my-5">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-8">
+                            <div class="p-5 bg-body-tertiary rounded-3">
+                                <p class="lead mb-5">mm-gsap-testo-<?php echo $i; ?></p>
+                                <h2 class="mm-gsap-testo-<?php echo $i; ?>">Lorem ipsum dolor sit amet pellentesque auctor malesuada blandit aliquam pellentesque sollicitudin mi.</h2>
+                                <div class="mt-5">
+                                    <div id="trigger-animation-<?php echo $i; ?>" class="btn btn-dark">play</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="container my-5">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-8">
-                        <div class="p-5 bg-body-tertiary rounded-3">
-                            <p class="lead mb-5">mm-gsap-testo-2</p>
-                            <h2 class="mm-gsap-testo-2">Lorem ipsum dolor sit amet pellentesque auctor malesuada blandit aliquam pellentesque sollicitudin mi.</h2>
-                            <div class="mt-5">
-                                <div id="trigger-animation-2" class="btn btn-dark">play</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container my-5">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-8">
-                        <div class="p-5 bg-body-tertiary rounded-3">
-                            <p class="lead mb-5">mm-gsap-testo-3</p>
-                            <h2 class="mm-gsap-testo-3">Lorem ipsum dolor sit amet pellentesque auctor malesuada blandit aliquam pellentesque sollicitudin mi.</h2>
-                            <div class="mt-5">
-                                <div id="trigger-animation-3" class="btn btn-dark">play</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container my-5">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-8">
-                        <div class="p-5 bg-body-tertiary rounded-3">
-                            <p class="lead mb-5">mm-gsap-testo-4</p>
-                            <h2 class="mm-gsap-testo-4">Lorem ipsum dolor sit amet pellentesque auctor malesuada blandit aliquam pellentesque sollicitudin mi.</h2>
-                            <div class="mt-5">
-                                <div id="trigger-animation-4" class="btn btn-dark">play</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container my-5">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-8">
-                        <div class="p-5 bg-body-tertiary rounded-3">
-                            <p class="lead mb-5">mm-gsap-testo-5</p>
-                            <h2 class="mm-gsap-testo-5">Lorem ipsum dolor sit amet pellentesque auctor malesuada blandit aliquam pellentesque sollicitudin mi.</h2>
-                            <div class="mt-5">
-                                <div id="trigger-animation-5" class="btn btn-dark">play</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container my-5">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-8">
-                        <div class="p-5 bg-body-tertiary rounded-3">
-                            <p class="lead mb-5">mm-gsap-testo-6</p>
-                            <h2 class="mm-gsap-testo-6">Lorem ipsum dolor sit amet pellentesque auctor malesuada blandit aliquam pellentesque sollicitudin mi.</h2>
-                            <div class="mt-5">
-                                <div id="trigger-animation-6" class="btn btn-dark">play</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container my-5">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-8">
-                        <div class="p-5 bg-body-tertiary rounded-3">
-                            <p class="lead mb-5">mm-gsap-testo-7</p>
-                            <h2 class="mm-gsap-testo-7">Lorem ipsum dolor sit amet pellentesque auctor malesuada blandit aliquam pellentesque sollicitudin mi.</h2>
-                            <div class="mt-5">
-                                <div id="trigger-animation-7" class="btn btn-dark">play</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container my-5">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-8">
-                        <div class="p-5 bg-body-tertiary rounded-3">
-                            <p class="lead mb-5">mm-gsap-testo-8</p>
-                            <h2 class="mm-gsap-testo-8">Lorem ipsum dolor sit amet pellentesque auctor malesuada blandit aliquam pellentesque sollicitudin mi.</h2>
-                            <div class="mt-5">
-                                <div id="trigger-animation-8" class="btn btn-dark">play</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container my-5">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-8">
-                        <div class="p-5 bg-body-tertiary rounded-3">
-                            <p class="lead mb-5">mm-gsap-testo-9</p>
-                            <h2 class="mm-gsap-testo-9">Lorem ipsum dolor sit amet pellentesque auctor malesuada blandit aliquam pellentesque sollicitudin mi.</h2>
-                            <div class="mt-5">
-                                <div id="trigger-animation-9" class="btn btn-dark">play</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container my-5">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-8">
-                        <div class="p-5 bg-body-tertiary rounded-3">
-                            <p class="lead mb-5">mm-gsap-testo-10</p>
-                            <h2 class="mm-gsap-testo-10">Lorem ipsum dolor sit amet pellentesque auctor malesuada blandit aliquam pellentesque sollicitudin mi.</h2>
-                            <div class="mt-5">
-                                <div id="trigger-animation-10" class="btn btn-dark">play</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container my-5">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-8">
-                        <div class="p-5 bg-body-tertiary rounded-3">
-                            <p class="lead mb-5">mm-gsap-testo-11</p>
-                            <h2 class="mm-gsap-testo-11">Lorem ipsum dolor sit amet pellentesque auctor malesuada blandit aliquam pellentesque sollicitudin mi.</h2>
-                            <div class="mt-5">
-                                <div id="trigger-animation-11" class="btn btn-dark">play</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container my-5">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-8">
-                        <div class="p-5 bg-body-tertiary rounded-3">
-                            <p class="lead mb-5">mm-gsap-testo-12</p>
-                            <h2 class="mm-gsap-testo-12">Lorem ipsum dolor sit amet pellentesque auctor malesuada blandit aliquam pellentesque sollicitudin mi.</h2>
-                            <div class="mt-5">
-                                <div id="trigger-animation-12" class="btn btn-dark">play</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <?php
+            } ?>
 
             
 
@@ -238,14 +89,6 @@ function mm_gsap_testo_template() {
         auth_redirect();
     }
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -283,12 +126,14 @@ function mm_gsap_immagine_template() {
         <html>
         <head>
             <title>MM GSAP immagine</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
             <?php wp_head(); // Includere gli script e gli stili registrati ?>
         </head>
         <body style="background-color: #fff;">
 
-            <div class="container">
+            <div class="container mb-5">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-8">
                         <h1>MM GSAP</h1>
@@ -297,13 +142,28 @@ function mm_gsap_immagine_template() {
             </div>
 
 
-         
-
+            <?php 
             
-
-
-
-
+            $img = plugins_url( 'assets/images/test_1.jpg', __DIR__ ); 
+            
+            for ($i = 1; $i <= 20; $i++) {
+                ?>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-8">
+                            <div class="p-5 bg-body-tertiary rounded-3">
+                                <p class="lead mb-5">img-effetto-<?php echo $i; ?></p>
+                                <div class="img-effetto-<?php echo $i; ?>"><img src="<?php echo $img ?>" alt=""></div>
+                                <div class="mt-5">
+                                    <div id="trigger-animation-img-<?php echo $i; ?>" class="btn btn-dark">play</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php
+            }
+            ?>
 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
             <?php wp_footer(); // Includere gli script registrati nel footer ?>
