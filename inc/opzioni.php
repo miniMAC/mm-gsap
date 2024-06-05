@@ -44,6 +44,7 @@ function mm_gsap_settings_init() {
     );
 }
 
+
 // Spiegazione delle librerie GSAP
 function mm_gsap_spiegazione($nome_plugin) {
     if (empty($nome_plugin)) {
@@ -93,16 +94,22 @@ function mm_gsap_checkbox_field_render() {
     $options = get_option('mm_gsap_settings');
     $files = mm_get_gsap_all_files();
 
+    // Assicurati che 'mm_gsap_checkbox_field' sia sempre un array
+    if ( ! isset($options['mm_gsap_checkbox_field']) ) {
+        $options['mm_gsap_checkbox_field'] = [];
+    }
+
     // Plugin da preselezionare
     $preselected_plugins = ["GSAP", "TEXTPLUGIN", "SPLITTEXT", "SCROLLTRIGGER", "SCROLLSMOOTHER"];
 
     foreach ($files as $file) {
         $normalized_name = strtoupper($file['name']);
         // Verifica se il checkbox deve essere preselezionato
-        $checked = (isset($options['mm_gsap_checkbox_field'][$file['fullname']]) || in_array($normalized_name, $preselected_plugins)) ? 'checked disabled' : '';
+        $checked = (isset($options['mm_gsap_checkbox_field'][$file['fullname']]) || in_array($normalized_name, $preselected_plugins)) ? 'checked' : '';
         echo '<input type="checkbox" name="mm_gsap_settings[mm_gsap_checkbox_field][' . $file['fullname'] . ']" ' . $checked . '> ' . $file['name'] . ' - '. mm_gsap_spiegazione($file['name']) .'<br>';
     }
 }
+
 
 // Renderizza il campo per abilitare/disabilitare ScrollSmoother
 function mm_gsap_scrollsmoother_enable_render() {

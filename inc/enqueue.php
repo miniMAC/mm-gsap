@@ -67,7 +67,6 @@ function mm_get_gsap_all_files() {
 
 // Aggiungi stili e script personalizzati
 function mm_gsap_enqueue( $hook ) {
-
     // Prendo l'opzione
     $mm_gsap_settings = get_option('mm_gsap_settings');
 
@@ -86,7 +85,6 @@ function mm_gsap_enqueue( $hook ) {
 
     // Registro ogni files
     foreach ( $gsap_files as $file ) {
-
         wp_register_script(
             $file['fullname'], // manipolo la stringa con il prefisso "mm-"
             plugins_url( $file['path'], __DIR__ ),
@@ -95,23 +93,27 @@ function mm_gsap_enqueue( $hook ) {
             ),
             '1.0.0'
         );
-
     }
 
-    // In base alla selzione servo tutti i files richiesti
-    foreach ($mm_gsap_settings['mm_gsap_checkbox_field'] as $key => $value) {
-        wp_enqueue_script( $key );
+    echo '<pre>';
+    var_dump($mm_gsap_settings);
+    echo '</pre>';
+
+    // Verifica se 'mm_gsap_checkbox_field' è definito
+    if ( isset($mm_gsap_settings['mm_gsap_checkbox_field']) && is_array($mm_gsap_settings['mm_gsap_checkbox_field']) ) {
+        // In base alla selezione servo tutti i files richiesti
+        foreach ($mm_gsap_settings['mm_gsap_checkbox_field'] as $key => $value) {
+            wp_enqueue_script( $key );
+        }
+
+        // Ottieni le chiavi dall'array mm_gsap_checkbox_field
+        $mm_gsap_keys = array_keys($mm_gsap_settings['mm_gsap_checkbox_field']);
+
+        // Includo il file principale
+        $mm_gsap_dep = array_merge(['jquery'], $mm_gsap_keys);
+    } else {
+        $mm_gsap_dep = ['jquery'];
     }
-
-    
-    // Includo il file principale
-    $mm_gsap_dep = ['jquery'];
-
-    // Ottieni le chiavi dall'array mm_gsap_checkbox_field
-    $mm_gsap_keys = array_keys($mm_gsap_settings['mm_gsap_checkbox_field']);
-
-    // Unisci le chiavi con l'array esistente
-    $mm_gsap_dep = array_merge($mm_gsap_dep, $mm_gsap_keys);
 
     wp_register_script(
         'mm-gsap-scripts',
@@ -130,10 +132,10 @@ function mm_gsap_enqueue( $hook ) {
             '1.0.0'
         );
     }
-
-
 }
 add_action( 'wp_enqueue_scripts', 'mm_gsap_enqueue' );
+
+
 
 
 
