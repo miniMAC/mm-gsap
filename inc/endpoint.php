@@ -148,9 +148,9 @@ function mm_gsap_immagine_template() {
             
             for ($i = 1; $i <= 20; $i++) {
                 ?>
-                <div class="container">
+                <div class="container mb-5">
                     <div class="row justify-content-center">
-                        <div class="col-12 col-md-8">
+                        <div class="col-12 col-md-4">
                             <div class="p-5 bg-body-tertiary rounded-3">
                                 <p class="lead mb-5">img-effetto-<?php echo $i; ?></p>
                                 <div class="img-effetto-<?php echo $i; ?>"><img src="<?php echo $img ?>" alt=""></div>

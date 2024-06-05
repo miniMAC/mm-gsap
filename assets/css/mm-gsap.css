@@ -1,43 +1,38 @@
 /*--------------------------------------------------------------
 # GSAP - testo
 --------------------------------------------------------------*/
-.mm-gsap-testo-1 {
-  display: inline-block;
-}
-
-.mm-gsap-testo-1 .char {
-  display: inline-block;
-}
-
-.mm-gsap-testo-2 {
-  display: inline;
-}
-
-.mm-gsap-testo-2 .char {
-  display: inline-block;
-}
-
-.mm-gsap-testo-3 {
-  display: inline;
-}
-
-.mm-gsap-testo-3 .char {
-  display: inline-block;
-  transform-origin: center;
-}
-
-.mm-gsap-testo-4 {
-  display: inline;
-}
-
-.mm-gsap-testo-4 .char {
-  display: inline-block;
-}
-
+.mm-gsap-testo-1,
+.mm-gsap-testo-2,
+.mm-gsap-testo-3,
+.mm-gsap-testo-4,
 .mm-gsap-testo-6 {
   display: inline;
 }
 
+.mm-gsap-testo-1 {
+  display: inline-block;
+}
+
+.mm-gsap-testo-1 .char,
+.mm-gsap-testo-2 .char,
+.mm-gsap-testo-3 .char,
+.mm-gsap-testo-4 .char,
 .mm-gsap-testo-6 .char {
   display: inline-block;
+}
+
+.mm-gsap-testo-3 .char {
+  transform-origin: center;
+}
+
+/*--------------------------------------------------------------
+# GSAP - immagini
+--------------------------------------------------------------*/
+.img-effetto-12,
+.img-effetto-13,
+.img-effetto-14,
+.img-effetto-15,
+.img-effetto-16 {
+  position: relative;
+  overflow: hidden;
 }/*# sourceMappingURL=mm-gsap.css.map */
