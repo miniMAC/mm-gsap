@@ -94,11 +94,7 @@ function mm_gsap_enqueue( $hook ) {
             '1.0.0'
         );
     }
-
-    echo '<pre>';
-    var_dump($mm_gsap_settings);
-    echo '</pre>';
-
+    
     // Verifica se 'mm_gsap_checkbox_field' è definito
     if ( isset($mm_gsap_settings['mm_gsap_checkbox_field']) && is_array($mm_gsap_settings['mm_gsap_checkbox_field']) ) {
         // In base alla selezione servo tutti i files richiesti

@@ -22,8 +22,9 @@ function gsap_wrapper_kadence_scroll_end() {
     <?php
 }
 
-$mm_gsap_scrollsmoother_enable = get_option('mm_gsap_scrollsmoother_enable', false);
-if ( $mm_gsap_scrollsmoother_enable ) {
+$mm_gsap_settings = get_option('mm_gsap_settings');
+
+if ( isset($mm_gsap_settings['mm_gsap_scrollsmoother_enable']) && $mm_gsap_settings['mm_gsap_scrollsmoother_enable'] === 'on' ) {
     // Aggiungi un'azione all'hook 'kadence_after_header'
     add_action('kadence_after_header', 'gsap_wrapper_kadence_scroll_start');
 
