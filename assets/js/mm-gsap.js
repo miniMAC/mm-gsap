@@ -2,6 +2,15 @@ document.addEventListener("DOMContentLoaded", function () {
     
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
+    if ( mm_gsap.mm_gsap_scrollsmoother === 'enabled' ) {
+        // ScrollSmoother
+        ScrollSmoother.create({
+            smooth: 1.2,
+            effects: true,
+            smoothTouch: 0.1,
+        });
+    }
+
     // Funzione per avviare l'animazione mm_gsap_testo_1
     function startAnimation1() {
         const elements = document.querySelectorAll(".mm-gsap-testo-1");

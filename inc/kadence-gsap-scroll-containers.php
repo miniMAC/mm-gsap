@@ -26,8 +26,8 @@ $mm_gsap_settings = get_option('mm_gsap_settings');
 
 if ( isset($mm_gsap_settings['mm_gsap_scrollsmoother_enable']) && $mm_gsap_settings['mm_gsap_scrollsmoother_enable'] === 'on' ) {
     // Aggiungi un'azione all'hook 'kadence_after_header'
-    add_action('kadence_after_header', 'gsap_wrapper_kadence_scroll_start');
+    add_action('kadence_before_wrapper', 'gsap_wrapper_kadence_scroll_start');
 
     // Aggiungi un'azione all'hook 'kadence_after_footer'
-    add_action('kadence_after_footer', 'gsap_wrapper_kadence_scroll_end');
+    add_action('kadence_after_wrapper', 'gsap_wrapper_kadence_scroll_end');
 }

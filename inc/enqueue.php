@@ -119,6 +119,13 @@ function mm_gsap_enqueue( $hook ) {
     );
     wp_enqueue_script( 'mm-gsap-scripts' );
 
+
+    // Localize del file princiaple JS
+	$mm_gsap_front_opts = [
+		'mm_gsap_scrollsmoother' => ( isset($mm_gsap_settings['mm_gsap_scrollsmoother_enable']) && $mm_gsap_settings['mm_gsap_scrollsmoother_enable'] === 'on' ) ? 'enabled' : '',
+    ];
+    wp_localize_script( 'mm-gsap-scripts', 'mm_gsap', $mm_gsap_front_opts );
+
     // Aggiungi lo stile CSS solo nel front-end
     if ( ! is_admin() ) {
         wp_enqueue_style(
