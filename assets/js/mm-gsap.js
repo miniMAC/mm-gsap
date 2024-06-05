@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    gsap.registerPlugin(ScrollTrigger, SplitText);
+    
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
     // Funzione per avviare l'animazione mm_gsap_testo_1
     function startAnimation1() {

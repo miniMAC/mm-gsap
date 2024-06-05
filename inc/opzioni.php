@@ -33,6 +33,15 @@ function mm_gsap_settings_init() {
         'mmGsapPlugin', 
         'mm_gsap_plugin_page_section'
     );
+
+    // Aggiungi il campo per abilitare/disabilitare ScrollSmoother
+    add_settings_field(
+        'mm_gsap_scrollsmoother_enable', 
+        __('Abilita ScrollSmoother', 'mm-gsap'), 
+        'mm_gsap_scrollsmoother_enable_render', 
+        'mmGsapPlugin', 
+        'mm_gsap_plugin_page_section'
+    );
 }
 
 // Spiegazione delle librerie GSAP
@@ -90,9 +99,16 @@ function mm_gsap_checkbox_field_render() {
     foreach ($files as $file) {
         $normalized_name = strtoupper($file['name']);
         // Verifica se il checkbox deve essere preselezionato
-        $checked = (isset($options['mm_gsap_checkbox_field'][$file['fullname']]) || in_array($normalized_name, $preselected_plugins)) ? 'checked' : '';
+        $checked = (isset($options['mm_gsap_checkbox_field'][$file['fullname']]) || in_array($normalized_name, $preselected_plugins)) ? 'checked disabled' : '';
         echo '<input type="checkbox" name="mm_gsap_settings[mm_gsap_checkbox_field][' . $file['fullname'] . ']" ' . $checked . '> ' . $file['name'] . ' - '. mm_gsap_spiegazione($file['name']) .'<br>';
     }
+}
+
+// Renderizza il campo per abilitare/disabilitare ScrollSmoother
+function mm_gsap_scrollsmoother_enable_render() {
+    $options = get_option('mm_gsap_settings');
+    $checked = isset($options['mm_gsap_scrollsmoother_enable']) ? 'checked' : '';
+    echo '<input type="checkbox" name="mm_gsap_settings[mm_gsap_scrollsmoother_enable]" ' . $checked . '> ' . __('Abilita ScrollSmoother', 'mm-gsap');
 }
 
 // Callback della sezione
@@ -118,3 +134,4 @@ function mm_gsap_options_page() {
     </form>
     <?php
 }
+
