@@ -17,9 +17,15 @@ if ( ! defined( 'WPINC' ) ) {
     die;
 }
 
+// Definizioni
+define('MM_GSAP_VERSION', '1.0.0');
+define('MM_GSAP_SLUG', 'mm-gsap');
+define('MM_GSAP_PLUGIN', 75);
+
 /**
  * Includo files
  */
+require_once plugin_dir_path( __FILE__ ) . 'inc/update.php';
 require_once plugin_dir_path( __FILE__ ) . 'inc/enqueue.php';
 require_once plugin_dir_path( __FILE__ ) . 'inc/opzioni.php';
 require_once plugin_dir_path( __FILE__ ) . 'inc/funzioni.php';
