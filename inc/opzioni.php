@@ -115,7 +115,7 @@ function mm_gsap_checkbox_field_render() {
 function mm_gsap_scrollsmoother_enable_render() {
     $options = get_option('mm_gsap_settings');
     $checked = isset($options['mm_gsap_scrollsmoother_enable']) ? 'checked' : '';
-    echo '<input type="checkbox" name="mm_gsap_settings[mm_gsap_scrollsmoother_enable]" ' . $checked . '> ' . __('Abilita ScrollSmoother', 'mm-gsap');
+    echo '<input type="checkbox" name="mm_gsap_settings[mm_gsap_scrollsmoother_enable]" ' . $checked . '> ' . __('Abilita ScrollSmoother (funziona solo con Kadence)', 'mm-gsap');
 }
 
 // Callback della sezione

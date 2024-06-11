@@ -4,7 +4,7 @@
  * Plugin Name:       MM GSAP
  * Plugin URI:        https://minimamente.com
  * Description:       Inclusione di custom CSS, JS e animazioni GSAP
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            miniMAC
  * Author URI:        https://minimamente.com
  * License:           GPL-2.0+
@@ -18,7 +18,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Definizioni
-define('MM_GSAP_VERSION', '1.0.0');
+define('MM_GSAP_VERSION', '1.0.1');
 define('MM_GSAP_SLUG', 'mm-gsap');
 define('MM_GSAP_PLUGIN', 75);
 
